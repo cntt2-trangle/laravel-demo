@@ -125,6 +125,15 @@
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
+
+                    <div>
+                        <h3></h3>
+                        @php
+                            $email = "abc@gmail.com";
+                        @endphp
+                        <x-sidebar title="Learn Laravel" :email="$email"></x-sidebar>
+
+                    </div>
                 </div>
             </div>
         </div>

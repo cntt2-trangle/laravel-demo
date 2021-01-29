@@ -15,15 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-        // $faker = Facker::create();
-        // foreach(range (1, 50) as $index) {
-        //     DB::table('categories')->insert([
-        //         "name" => $faker -> name
-        //     ]);
-        // }
-        $this->call([
-            PostTableSeeder::class
-        ]);
+        $this->call([CountryTableSeeder::class]);
+        $this->call([BusinessTypeTableSeeder::class]);
+        $this->call([CommunityTableSeeder::class]);
+        $this->call([EventTableSeeder::class]);
+        $this->call([ExpertiseTableSeeder::class]);
+        $this->call([ExploreTableSeeder::class]);
+        $this->call([LocationTableSeeder::class]);
+        $this->call([VoucherTableSeeder::class]);
+        $this->call([WorkplaceTableSeeder::class]);
     }
 }

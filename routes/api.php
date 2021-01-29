@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\EventController;
 use App\Http\Controllers\Api\VoucherController;
 use App\Http\Controllers\Api\WorkplaceController;
 use App\Http\Controllers\Api\ExploreController;
+use App\Http\Controllers\Api\LocationController;
 
 
 /*
@@ -67,6 +68,7 @@ Route::resource('vouchers', VoucherController::class);
 
 /* Page Workplace */
 Route::resource('workplaces', WorkplaceController::class);
+Route::resource('locations', LocationController::class);
 
 
 

@@ -19,9 +19,12 @@ class CreateWorkplacesTable extends Migration
             $table->string('name');
             $table->float('price');
             $table->text('overview');
-            $table->string('location');
+            $table->integer('location_id')->unsigned()->nullable();
+            $table->foreign('location_id')
+                  ->references('id')
+                  ->on('locations')
+                  ->onDelete('cascade');
             $table->string('phone');
-            $table->timestamps();
         });
     }
 

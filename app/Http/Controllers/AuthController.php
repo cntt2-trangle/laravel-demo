@@ -16,7 +16,7 @@ class AuthController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required',
-            // 'c_password' => 'required|same:password',
+            'c_password' => 'required|same:password',
         ]);
  
         $user = new User([
@@ -45,16 +45,7 @@ class AuthController extends Controller
         $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string',
-            // 'remember_me' => 'boolean'
         ]);
- 
-        // if ($request->fails()) {
-        //     return response()->json([
-        //         'status' => 'fails',
-        //         'message' => $request->errors()->first(),
-        //         'errors' => $request->errors()->toArray(),
-        //     ]);
-        // }
  
         $credentials = request(['email', 'password']);
  
@@ -69,9 +60,9 @@ class AuthController extends Controller
         $tokenResult = $user->createToken('Personal Access Token');
         $token = $tokenResult->token;
  
-        if ($request->remember_me) {
-            $token->expires_at = Carbon::now()->addWeeks(1);
-        }
+        // if ($request->remember_me) {
+        //     $token->expires_at = Carbon::now()->addWeeks(1);
+        // }
  
         $token->save();
  
